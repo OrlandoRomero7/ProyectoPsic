@@ -47,6 +47,8 @@
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCanalizo = new System.Windows.Forms.TextBox();
+            this.textBoxControl = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelName
@@ -107,7 +109,7 @@
             // 
             this.labelSemester.AutoSize = true;
             this.labelSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSemester.Location = new System.Drawing.Point(46, 300);
+            this.labelSemester.Location = new System.Drawing.Point(45, 380);
             this.labelSemester.Name = "labelSemester";
             this.labelSemester.Size = new System.Drawing.Size(96, 25);
             this.labelSemester.TabIndex = 8;
@@ -117,7 +119,7 @@
             // textBoxSemester
             // 
             this.textBoxSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSemester.Location = new System.Drawing.Point(49, 328);
+            this.textBoxSemester.Location = new System.Drawing.Point(48, 408);
             this.textBoxSemester.Name = "textBoxSemester";
             this.textBoxSemester.Size = new System.Drawing.Size(539, 30);
             this.textBoxSemester.TabIndex = 9;
@@ -126,7 +128,7 @@
             // 
             this.labelCareer.AutoSize = true;
             this.labelCareer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCareer.Location = new System.Drawing.Point(46, 221);
+            this.labelCareer.Location = new System.Drawing.Point(45, 301);
             this.labelCareer.Name = "labelCareer";
             this.labelCareer.Size = new System.Drawing.Size(78, 25);
             this.labelCareer.TabIndex = 10;
@@ -135,7 +137,7 @@
             // textBoxService
             // 
             this.textBoxService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxService.Location = new System.Drawing.Point(53, 471);
+            this.textBoxService.Location = new System.Drawing.Point(52, 551);
             this.textBoxService.Name = "textBoxService";
             this.textBoxService.Size = new System.Drawing.Size(538, 30);
             this.textBoxService.TabIndex = 11;
@@ -145,7 +147,7 @@
             // 
             this.labelService.AutoSize = true;
             this.labelService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelService.Location = new System.Drawing.Point(46, 443);
+            this.labelService.Location = new System.Drawing.Point(45, 523);
             this.labelService.Name = "labelService";
             this.labelService.Size = new System.Drawing.Size(168, 25);
             this.labelService.TabIndex = 12;
@@ -154,9 +156,9 @@
             // richTextBoxObservaciones
             // 
             this.richTextBoxObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxObservaciones.Location = new System.Drawing.Point(54, 552);
+            this.richTextBoxObservaciones.Location = new System.Drawing.Point(669, 169);
             this.richTextBoxObservaciones.Name = "richTextBoxObservaciones";
-            this.richTextBoxObservaciones.Size = new System.Drawing.Size(537, 139);
+            this.richTextBoxObservaciones.Size = new System.Drawing.Size(464, 179);
             this.richTextBoxObservaciones.TabIndex = 13;
             this.richTextBoxObservaciones.Text = "";
             // 
@@ -164,7 +166,7 @@
             // 
             this.labelObservations.AutoSize = true;
             this.labelObservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelObservations.Location = new System.Drawing.Point(49, 515);
+            this.labelObservations.Location = new System.Drawing.Point(664, 126);
             this.labelObservations.Name = "labelObservations";
             this.labelObservations.Size = new System.Drawing.Size(144, 25);
             this.labelObservations.TabIndex = 14;
@@ -201,10 +203,11 @@
             "Ing. Gestión Empresarial",
             "Ing. Industrial",
             "Ing. Electronica"});
-            this.comboBoxCareer.Location = new System.Drawing.Point(52, 249);
+            this.comboBoxCareer.Location = new System.Drawing.Point(51, 329);
             this.comboBoxCareer.Name = "comboBoxCareer";
             this.comboBoxCareer.Size = new System.Drawing.Size(538, 33);
             this.comboBoxCareer.TabIndex = 19;
+            this.comboBoxCareer.SelectedIndexChanged += new System.EventHandler(this.comboBoxCareer_SelectedIndexChanged);
             // 
             // iconButtonSave
             // 
@@ -214,7 +217,7 @@
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 20;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(381, 710);
+            this.iconButtonSave.Location = new System.Drawing.Point(1019, 408);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(114, 31);
             this.iconButtonSave.TabIndex = 20;
@@ -222,6 +225,7 @@
             this.iconButtonSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSave.UseVisualStyleBackColor = true;
+            this.iconButtonSave.Click += new System.EventHandler(this.iconButtonSave_Click);
             // 
             // iconButtonCancel
             // 
@@ -231,7 +235,7 @@
             this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCancel.IconSize = 20;
             this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(145, 710);
+            this.iconButtonCancel.Location = new System.Drawing.Point(669, 408);
             this.iconButtonCancel.Name = "iconButtonCancel";
             this.iconButtonCancel.Size = new System.Drawing.Size(120, 31);
             this.iconButtonCancel.TabIndex = 21;
@@ -244,7 +248,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 373);
+            this.label1.Location = new System.Drawing.Point(45, 453);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 22;
@@ -253,16 +257,36 @@
             // textBoxCanalizo
             // 
             this.textBoxCanalizo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCanalizo.Location = new System.Drawing.Point(49, 401);
+            this.textBoxCanalizo.Location = new System.Drawing.Point(48, 481);
             this.textBoxCanalizo.Name = "textBoxCanalizo";
             this.textBoxCanalizo.Size = new System.Drawing.Size(538, 30);
             this.textBoxCanalizo.TabIndex = 23;
+            // 
+            // textBoxControl
+            // 
+            this.textBoxControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxControl.Location = new System.Drawing.Point(52, 252);
+            this.textBoxControl.Name = "textBoxControl";
+            this.textBoxControl.Size = new System.Drawing.Size(539, 30);
+            this.textBoxControl.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(49, 224);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 25);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Numero de control";
             // 
             // FormAddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 753);
+            this.ClientSize = new System.Drawing.Size(1193, 626);
+            this.Controls.Add(this.textBoxControl);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCanalizo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButtonCancel);
@@ -311,5 +335,7 @@
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCanalizo;
+        private System.Windows.Forms.TextBox textBoxControl;
+        private System.Windows.Forms.Label label2;
     }
 }

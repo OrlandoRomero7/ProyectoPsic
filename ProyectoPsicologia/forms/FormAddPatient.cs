@@ -13,10 +13,39 @@ namespace ProyectoPsicologia.forms
 {
     public partial class FormAddPatient : Form
     {
-        public FormAddPatient()
+        public int? Id;
+        Pacientes tablaPacientes;
+
+        public FormAddPatient(int? Id = null)
         {
             InitializeComponent();
+            this.Id = Id;
+            if (Id != null)
+                CargarData();
         }
+        private void CargarData()
+        {
+            using (PsicologiaBDEntities1 db = new PsicologiaBDEntities1())
+            {
+                tablaPacientes = db.Pacientes.Find(Id);
+                dateTimePicker1.Value = tablaPacientes.Fecha;
+                textBoxName.Text = tablaPacientes.Nombre;
+                if (tablaPacientes.Sexo == "Masculino")
+                    radioButtonMale.Checked = true;
+                if (tablaPacientes.Sexo == "Femenino")
+                    radioButtonFemale.Checked = true;
+
+                textBoxControl.Text = tablaPacientes.Num_Control;
+                comboBoxCareer.SelectedItem = tablaPacientes.Carrera;
+                textBoxSemester.Text = tablaPacientes.Semestre;
+                textBoxCanalizo.Text = tablaPacientes.Canalizo;
+                textBoxService.Text = tablaPacientes.Servicio;
+                richTextBoxObservaciones.Text = tablaPacientes.Observaciones;
+
+               
+            }
+        }
+
 
         private void labelCareer_Click(object sender, EventArgs e)
         {
@@ -42,7 +71,7 @@ namespace ProyectoPsicologia.forms
         {
 
         }
-
+        /*
         private void buttonAddPatient_Click(object sender, EventArgs e)
         {
              using (PsicologiaBDEntities1 db = new PsicologiaBDEntities1()){
@@ -60,13 +89,57 @@ namespace ProyectoPsicologia.forms
             }
             
         }
+        */
 
         private void FormAddPatient_Load(object sender, EventArgs e)
         {
-            comboBoxCareer.SelectedIndex = 0;
+            //comboBoxCareer.SelectedItem = "Ing. Sistemas Computacionales";
         }
 
         private void labelObservations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonSave_Click(object sender, EventArgs e)
+        {
+            using (PsicologiaBDEntities1 db = new PsicologiaBDEntities1())
+            {
+                if(Id == null)
+                    tablaPacientes = new Pacientes();
+
+
+                tablaPacientes.Fecha = dateTimePicker1.Value;
+                tablaPacientes.Nombre = textBoxName.Text;
+                if(radioButtonMale.Checked==true)
+                    tablaPacientes.Sexo = radioButtonMale.Text;
+                if (radioButtonFemale.Checked == true)
+                    tablaPacientes.Sexo = radioButtonFemale.Text;
+                tablaPacientes.Num_Control = textBoxControl.Text;
+                tablaPacientes.Carrera = comboBoxCareer.Text;
+                tablaPacientes.Semestre = textBoxSemester.Text;
+                tablaPacientes.Canalizo = textBoxCanalizo.Text;
+                tablaPacientes.Servicio = textBoxService.Text;
+                tablaPacientes.Observaciones = richTextBoxObservaciones.Text;
+
+                
+                if (Id == null)
+                {
+                    db.Pacientes.Add(tablaPacientes);
+                }
+                else
+                {
+                    db.Entry(tablaPacientes).State = System.Data.Entity.EntityState.Modified;
+                }
+
+
+                db.SaveChanges();
+
+                this.Close();
+            }
+        }
+
+        private void comboBoxCareer_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

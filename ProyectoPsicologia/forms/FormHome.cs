@@ -73,6 +73,16 @@ namespace ProyectoPsicologia.forms
 
         private void iconButtonAddAgain_Click(object sender, EventArgs e)
         {
+            int? Id = GetID();
+            int bandera = 1;
+            if (Id != null)
+            {
+                forms.FormAddPatient tabla = new forms.FormAddPatient(Id,bandera);
+                tabla.ShowDialog();
+
+                refreshTable();
+
+            }
 
         }
 

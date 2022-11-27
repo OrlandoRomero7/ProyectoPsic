@@ -14,12 +14,14 @@ namespace ProyectoPsicologia.forms
     public partial class FormAddPatient : Form
     {
         public int? Id;
+        public int? bandera;
         Pacientes tablaPacientes;
 
-        public FormAddPatient(int? Id = null)
+        public FormAddPatient(int? Id = null,int? bandera=null)
         {
             InitializeComponent();
             this.Id = Id;
+            this.bandera = bandera;
             if (Id != null)
                 CargarData();
         }
@@ -42,6 +44,8 @@ namespace ProyectoPsicologia.forms
                 textBoxService.Text = tablaPacientes.Servicio;
                 richTextBoxObservaciones.Text = tablaPacientes.Observaciones;
 
+                if(bandera==1)
+                    Id = null;
                
             }
         }

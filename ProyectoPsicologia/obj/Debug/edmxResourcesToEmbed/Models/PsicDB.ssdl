@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PsicologiaBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sexo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Num_Control" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Carrera" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Semestre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Canalizo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Servicio" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PsicologiaBDModelStoreContainer">
+    <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

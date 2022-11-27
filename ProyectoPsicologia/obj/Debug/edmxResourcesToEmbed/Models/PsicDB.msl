@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PsicologiaBDModelStoreContainer" CdmEntityContainer="PsicologiaBDEntities1">
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="PsicologiaBDModel.Pacientes">
+        <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Num_Control" ColumnName="Num_Control" />
+          <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+          <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+          <ScalarProperty Name="Canalizo" ColumnName="Canalizo" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

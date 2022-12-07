@@ -12,6 +12,8 @@ namespace ProyectoPsicologia.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class PsicologiaBDEntities1 : DbContext
     {
@@ -26,5 +28,10 @@ namespace ProyectoPsicologia.Models
         }
     
         public virtual DbSet<Pacientes> Pacientes { get; set; }
+    
+        public virtual int GraficoCarreras(ObjectParameter totalInnovacion, ObjectParameter totalElectromecanica, ObjectParameter totalElectronica, ObjectParameter totalGestion, ObjectParameter totalIndustrial, ObjectParameter totalMecatronica, ObjectParameter totalSistemas, ObjectParameter totalAdministracion)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GraficoCarreras", totalInnovacion, totalElectromecanica, totalElectronica, totalGestion, totalIndustrial, totalMecatronica, totalSistemas, totalAdministracion);
+        }
     }
 }

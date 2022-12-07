@@ -15,6 +15,16 @@
     <Property Name="Servicio" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="Observaciones" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Function Name="GraficoCarreras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="totalInnovacion" Type="int" Mode="InOut" />
+    <Parameter Name="totalElectromecanica" Type="int" Mode="InOut" />
+    <Parameter Name="totalElectronica" Type="int" Mode="InOut" />
+    <Parameter Name="totalGestion" Type="int" Mode="InOut" />
+    <Parameter Name="totalIndustrial" Type="int" Mode="InOut" />
+    <Parameter Name="totalMecatronica" Type="int" Mode="InOut" />
+    <Parameter Name="totalSistemas" Type="int" Mode="InOut" />
+    <Parameter Name="totalAdministracion" Type="int" Mode="InOut" />
+  </Function>
   <EntityContainer Name="PsicologiaBDModelStoreContainer">
     <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

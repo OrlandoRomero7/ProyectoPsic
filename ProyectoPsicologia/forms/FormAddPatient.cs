@@ -40,8 +40,8 @@ namespace ProyectoPsicologia.forms
                 textBoxControl.Text = tablaPacientes.Num_Control;
                 comboBoxCareer.SelectedItem = tablaPacientes.Carrera;
                 textBoxSemester.Text = tablaPacientes.Semestre;
-                textBoxCanalizo.Text = tablaPacientes.Canalizo;
-                textBoxService.Text = tablaPacientes.Servicio;
+                comboBoxCanalizo.Text = tablaPacientes.Canalizo;
+                comboBoxService.Text = tablaPacientes.Servicio;
                 richTextBoxObservaciones.Text = tablaPacientes.Observaciones;
 
                 if(bandera==1)
@@ -122,8 +122,8 @@ namespace ProyectoPsicologia.forms
                 tablaPacientes.Num_Control = textBoxControl.Text;
                 tablaPacientes.Carrera = comboBoxCareer.Text;
                 tablaPacientes.Semestre = textBoxSemester.Text;
-                tablaPacientes.Canalizo = textBoxCanalizo.Text;
-                tablaPacientes.Servicio = textBoxService.Text;
+                tablaPacientes.Canalizo = comboBoxCanalizo.Text;
+                tablaPacientes.Servicio = comboBoxService.Text;
                 tablaPacientes.Observaciones = richTextBoxObservaciones.Text;
 
                 
@@ -144,6 +144,16 @@ namespace ProyectoPsicologia.forms
         }
 
         private void comboBoxCareer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBoxCanalizo_TextChanged(object sender, EventArgs e)
         {
 
         }

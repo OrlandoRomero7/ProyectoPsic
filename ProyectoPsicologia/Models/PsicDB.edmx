@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PsicologiaBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PsicologiaBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Pacientes">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,11 +20,20 @@
           <Property Name="Servicio" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="Observaciones" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Function Name="GraficoCarreras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="totalInnovacion" Type="int" Mode="InOut" />
+          <Parameter Name="totalElectromecanica" Type="int" Mode="InOut" />
+          <Parameter Name="totalElectronica" Type="int" Mode="InOut" />
+          <Parameter Name="totalGestion" Type="int" Mode="InOut" />
+          <Parameter Name="totalIndustrial" Type="int" Mode="InOut" />
+          <Parameter Name="totalMecatronica" Type="int" Mode="InOut" />
+          <Parameter Name="totalSistemas" Type="int" Mode="InOut" />
+          <Parameter Name="totalAdministracion" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="PsicologiaBDModelStoreContainer">
           <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PsicologiaBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -45,6 +54,16 @@
         </EntityType>
         <EntityContainer Name="PsicologiaBDEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
+          <FunctionImport Name="GraficoCarreras">
+            <Parameter Name="totalInnovacion" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalElectromecanica" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalElectronica" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalGestion" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalIndustrial" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalMecatronica" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalSistemas" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalAdministracion" Mode="InOut" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -68,6 +87,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GraficoCarreras" FunctionName="PsicologiaBDModel.Store.GraficoCarreras" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

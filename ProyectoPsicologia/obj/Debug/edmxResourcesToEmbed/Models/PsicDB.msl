@@ -17,5 +17,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GraficoCarreras" FunctionName="PsicologiaBDModel.Store.GraficoCarreras" />
   </EntityContainerMapping>
 </Mapping>

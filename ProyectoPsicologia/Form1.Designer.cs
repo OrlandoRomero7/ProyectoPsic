@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButtonGraph = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.panelName = new System.Windows.Forms.Panel();
-            this.labelLogo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelHome = new System.Windows.Forms.Panel();
+            this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -57,6 +60,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 553);
             this.pictureBox1.Name = "pictureBox1";
@@ -114,22 +118,12 @@
             // panelName
             // 
             this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(0)))), ((int)(((byte)(93)))));
-            this.panelName.Controls.Add(this.labelLogo);
+            this.panelName.Controls.Add(this.pictureBox2);
             this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelName.Location = new System.Drawing.Point(0, 0);
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(200, 109);
             this.panelName.TabIndex = 1;
-            // 
-            // labelLogo
-            // 
-            this.labelLogo.AutoSize = true;
-            this.labelLogo.Location = new System.Drawing.Point(83, 40);
-            this.labelLogo.Name = "labelLogo";
-            this.labelLogo.Size = new System.Drawing.Size(38, 16);
-            this.labelLogo.TabIndex = 1;
-            this.labelLogo.Text = "Logo";
-            this.labelLogo.Click += new System.EventHandler(this.labelLogo_Click);
             // 
             // panel1
             // 
@@ -147,6 +141,24 @@
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(1182, 697);
             this.panelHome.TabIndex = 2;
+            this.panelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHome_Paint);
+            // 
+            // timerHoraFecha
+            // 
+            this.timerHoraFecha.Enabled = true;
+            this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(191, 85);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Form1
             // 
@@ -157,10 +169,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
+            this.Text = "Coordinación de orientación educativa y psicología";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelName.ResumeLayout(false);
-            this.panelName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,10 +185,11 @@
         private System.Windows.Forms.Panel panelName;
         private FontAwesome.Sharp.IconButton iconButtonGraph;
         private FontAwesome.Sharp.IconButton iconButtonHome;
-        private System.Windows.Forms.Label labelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelHome;
+        private System.Windows.Forms.Timer timerHoraFecha;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

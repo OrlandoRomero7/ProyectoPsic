@@ -17,3 +17,4 @@ C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\Enti
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\EntityFramework.xml
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\obj\Debug\ProyectoPsicologia.forms.FormStatistics.resources

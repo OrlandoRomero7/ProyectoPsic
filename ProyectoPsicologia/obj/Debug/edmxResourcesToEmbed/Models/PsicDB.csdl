@@ -17,5 +17,15 @@
   </EntityType>
   <EntityContainer Name="PsicologiaBDEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
+    <FunctionImport Name="GraficoCarreras">
+      <Parameter Name="totalInnovacion" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalElectromecanica" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalElectronica" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalGestion" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalIndustrial" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalMecatronica" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalSistemas" Mode="InOut" Type="Int32" />
+      <Parameter Name="totalAdministracion" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

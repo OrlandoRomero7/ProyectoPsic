@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Windows;
 using System.Windows.Forms;
 using ProyectoPsicologia.Models;
 
@@ -59,16 +60,22 @@ namespace ProyectoPsicologia.forms
             refreshTable();
         }
 
-        private int? GetID()
+        private int? GetID() 
         {
-            try
+            if (dataGridView.SelectedRows.Count > 0)
             {
                 return int.Parse(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[0].Value.ToString());
             }
-            catch
+            
+            else
             {
+                MessageBox.Show("Necesita seleccionar algun registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
+                
             }
+            
+            
+            
         }
 
         private void iconButtonAddAgain_Click(object sender, EventArgs e)
@@ -92,6 +99,7 @@ namespace ProyectoPsicologia.forms
             if (Id != null)
             {
                 forms.FormAddPatient tabla = new forms.FormAddPatient(Id);
+                tabla.Text = "Editar Registro";
                 tabla.ShowDialog();
 
                 refreshTable();
@@ -102,11 +110,14 @@ namespace ProyectoPsicologia.forms
 
         private void iconButtonDelete_Click(object sender, EventArgs e)
         {
+           
             int? Id = GetID();
             if (Id != null)
             {
+                
                 using (PsicologiaBDEntities1 db = new PsicologiaBDEntities1())
                 {
+                    
                     Pacientes tablaPacientes = db.Pacientes.Find(Id);
                     db.Pacientes.Remove(tablaPacientes);
                     db.SaveChanges();

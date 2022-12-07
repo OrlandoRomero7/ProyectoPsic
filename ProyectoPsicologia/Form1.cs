@@ -70,6 +70,7 @@ namespace ProyectoPsicologia
         {
             ActivateButton(sender, RGBColors.color1);
             //OpenChildForm(new FormDashboard());
+            OpenFormHome(new forms.FormStatistics());
 
         }
 
@@ -82,10 +83,15 @@ namespace ProyectoPsicologia
         }
         private void OpenFormHome(object child_form)
         {
+            panelHome.Visible = true;
+            //labelFecha.Visible = true;
+            //labelHora.Visible = true;
+
             if (this.panelHome.Controls.Count > 0)
                 this.panelHome.Controls.RemoveAt(0);
             Form cf = child_form as Form;
             cf.TopLevel = false;
+            cf.Dock= DockStyle.Fill;   
             this.panelHome.Controls.Add(cf);
             this.panelHome.Tag = cf;
             cf.Show();
@@ -104,11 +110,40 @@ namespace ProyectoPsicologia
 
         private void labelLogo_Click(object sender, EventArgs e)
         {
+            panelHome.Visible = false;
+            //labelFecha.Visible = false;
+            //labelHora.Visible = false;
             Reset();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
+        {
+            //labelHora.Text = DateTime.Now.ToString("hh:mm:ss");
+
+        }
+
+        private void panelHome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panelHome.Visible = false;
+            //labelFecha.Visible = false;
+            //labelHora.Visible = false;
+            Reset();
 
         }
     }

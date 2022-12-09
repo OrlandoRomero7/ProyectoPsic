@@ -38,6 +38,8 @@
             this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconButtonExport = new FontAwesome.Sharp.IconButton();
+            this.textBoxSemestreExportar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,12 +200,36 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Buscar por Numero de Control";
             // 
+            // iconButtonExport
+            // 
+            this.iconButtonExport.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonExport.IconColor = System.Drawing.Color.Black;
+            this.iconButtonExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExport.Location = new System.Drawing.Point(1047, 55);
+            this.iconButtonExport.Name = "iconButtonExport";
+            this.iconButtonExport.Size = new System.Drawing.Size(123, 32);
+            this.iconButtonExport.TabIndex = 10;
+            this.iconButtonExport.Text = "Exportar a Excel";
+            this.iconButtonExport.UseVisualStyleBackColor = true;
+            this.iconButtonExport.Click += new System.EventHandler(this.iconButtonExport_Click);
+            // 
+            // textBoxSemestreExportar
+            // 
+            this.textBoxSemestreExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSemestreExportar.Location = new System.Drawing.Point(1047, 16);
+            this.textBoxSemestreExportar.Name = "textBoxSemestreExportar";
+            this.textBoxSemestreExportar.Size = new System.Drawing.Size(123, 30);
+            this.textBoxSemestreExportar.TabIndex = 11;
+            this.textBoxSemestreExportar.TextChanged += new System.EventHandler(this.textBoxSemestreExportar_TextChanged);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(210)))), ((int)(((byte)(234)))));
             this.ClientSize = new System.Drawing.Size(1182, 697);
+            this.Controls.Add(this.textBoxSemestreExportar);
+            this.Controls.Add(this.iconButtonExport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButtonDelete);
@@ -235,5 +261,7 @@
         private FontAwesome.Sharp.IconButton iconButtonDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton iconButtonExport;
+        private System.Windows.Forms.TextBox textBoxSemestreExportar;
     }
 }

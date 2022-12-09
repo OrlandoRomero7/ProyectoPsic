@@ -16,21 +16,34 @@ namespace ProyectoPsicologia.forms
         public int? Id;
         public int? bandera;
         Pacientes tablaPacientes;
+        //public string valorSemestre;
 
         public FormAddPatient(int? Id = null,int? bandera=null)
         {
+            //DateTimePicker dateTimePickerActual = new DateTimePicker();
             InitializeComponent();
             this.Id = Id;
             this.bandera = bandera;
             if (Id != null)
                 CargarData();
+            if (dateTimePicker1.Value.Month >= 8)
+            {
+               textBoxSemestreActual.Text = dateTimePicker1.Value.Year.ToString() + "-2";
+            }
+            else
+            {
+                textBoxSemestreActual.Text = dateTimePicker1.Value.Year.ToString() + "-1";
+            }
+              
+            
         }
         private void CargarData()
         {
             using (PsicologiaBDEntities1 db = new PsicologiaBDEntities1())
             {
                 tablaPacientes = db.Pacientes.Find(Id);
-                dateTimePicker1.Value = tablaPacientes.Fecha;
+                if(bandera!=1)
+                    dateTimePicker1.Value = tablaPacientes.Fecha;
                 textBoxName.Text = tablaPacientes.Nombre;
                 if (tablaPacientes.Sexo == "Masculino")
                     radioButtonMale.Checked = true;
@@ -46,6 +59,7 @@ namespace ProyectoPsicologia.forms
 
                 if(bandera==1)
                     Id = null;
+                
                
             }
         }
@@ -114,6 +128,7 @@ namespace ProyectoPsicologia.forms
 
 
                 tablaPacientes.Fecha = dateTimePicker1.Value;
+                tablaPacientes.Semestre_Actual = textBoxSemestreActual.Text;
                 tablaPacientes.Nombre = textBoxName.Text;
                 if(radioButtonMale.Checked==true)
                     tablaPacientes.Sexo = radioButtonMale.Text;
@@ -157,5 +172,12 @@ namespace ProyectoPsicologia.forms
         {
 
         }
+
+        private void textBoxSemestreActual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -49,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxCanalizo = new System.Windows.Forms.ComboBox();
             this.comboBoxService = new System.Windows.Forms.ComboBox();
+            this.textBoxSemestreActual = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelName
@@ -305,12 +306,22 @@
             this.comboBoxService.Size = new System.Drawing.Size(534, 33);
             this.comboBoxService.TabIndex = 27;
             // 
+            // textBoxSemestreActual
+            // 
+            this.textBoxSemestreActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSemestreActual.Location = new System.Drawing.Point(963, 46);
+            this.textBoxSemestreActual.Name = "textBoxSemestreActual";
+            this.textBoxSemestreActual.Size = new System.Drawing.Size(170, 30);
+            this.textBoxSemestreActual.TabIndex = 28;
+            this.textBoxSemestreActual.TextChanged += new System.EventHandler(this.textBoxSemestreActual_TextChanged);
+            // 
             // FormAddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(210)))), ((int)(((byte)(234)))));
             this.ClientSize = new System.Drawing.Size(1193, 626);
+            this.Controls.Add(this.textBoxSemestreActual);
             this.Controls.Add(this.comboBoxService);
             this.Controls.Add(this.comboBoxCanalizo);
             this.Controls.Add(this.textBoxControl);
@@ -363,5 +374,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxCanalizo;
         private System.Windows.Forms.ComboBox comboBoxService;
+        private System.Windows.Forms.TextBox textBoxSemestreActual;
     }
 }

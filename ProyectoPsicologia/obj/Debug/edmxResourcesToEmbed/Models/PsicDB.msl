@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Pacientes">
       <EntityTypeMapping TypeName="PsicologiaBDModel.Pacientes">
         <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="Semestre_Actual" ColumnName="Semestre_Actual" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />

@@ -18,3 +18,10 @@ C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\Enti
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\EntityFramework.xml
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\obj\Debug\ProyectoPsicologia.forms.FormStatistics.resources
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\SpreadsheetLight.dll
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\System.Drawing.Common.dll
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\System.IO.Packaging.dll
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\SpreadsheetLight.xml
+C:\Users\orlad\source\repos\ProyectoPsicologia\ProyectoPsicologia\bin\Debug\System.IO.Packaging.xml

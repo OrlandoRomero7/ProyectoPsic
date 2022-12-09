@@ -10,10 +10,11 @@
     <Property Name="Sexo" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="Num_Control" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="Carrera" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Semestre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Semestre" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="Canalizo" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Servicio" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Servicio" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Observaciones" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Semestre_Actual" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <Function Name="GraficoCarreras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="totalInnovacion" Type="int" Mode="InOut" />

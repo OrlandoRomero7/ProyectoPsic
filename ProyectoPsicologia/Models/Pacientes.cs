@@ -24,5 +24,6 @@ namespace ProyectoPsicologia.Models
         public string Canalizo { get; set; }
         public string Servicio { get; set; }
         public string Observaciones { get; set; }
+        public string Semestre_Actual { get; set; }
     }
 }
